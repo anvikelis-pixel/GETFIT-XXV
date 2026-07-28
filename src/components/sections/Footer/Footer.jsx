@@ -21,6 +21,16 @@ const FACEBOOK_URL = "https://www.facebook.com/Getfitxxv/";
 const MAP_URL =
   "https://www.google.com/maps/search/?api=1&query=GETFIT+XXV+Geronymaki+25+Heraklion";
 
+const navigationItems = [
+  { label: "Σχετικά", href: "#about" },
+  { label: "Υπηρεσίες", href: "#services" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Gym", href: "#coaches" },
+  { label: "Ραντεβού", href: "#app" },
+  { label: "Κριτικές", href: "#reviews" },
+  { label: "Επικοινωνία", href: "#contact" },
+];
+
 function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -84,12 +94,11 @@ function Footer() {
             <span className="footer__label">ΠΛΟΗΓΗΣΗ</span>
 
             <nav className="footer__nav" aria-label="Πλοήγηση footer">
-              <a href="#about">Σχετικά</a>
-              <a href="#services">Υπηρεσίες</a>
-              <a href="#gallery">Gallery</a>
-              <a href="#app">Πρόγραμμα</a>
-              <a href="#reviews">Κριτικές</a>
-              <a href="#contact">Επικοινωνία</a>
+              {navigationItems.map((item) => (
+                <a href={item.href} key={item.href}>
+                  {item.label}
+                </a>
+              ))}
             </nav>
           </div>
 

@@ -99,15 +99,17 @@
 
 .about__title {
   width: 100%;
-  max-width: 620px;
+  max-width: 720px;
 
-  font-size: clamp(2.8rem, 4.9vw, 5.8rem);
-  line-height: 0.91;
-  letter-spacing: -0.052em;
+  font-size: clamp(2.5rem, 4.2vw, 5.2rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
   font-weight: 950;
   text-transform: uppercase;
 
-  overflow-wrap: anywhere;
+  overflow-wrap: normal;
+  word-break: keep-all;
+  hyphens: none;
 }
 
 .about__title span {
@@ -533,7 +535,7 @@
   }
 
   .about__title {
-    font-size: clamp(2.8rem, 4.5vw, 5.2rem);
+    font-size: clamp(2.6rem, 4vw, 4.8rem);
   }
 }
 
@@ -573,8 +575,9 @@
   }
 
   .about__title {
-    font-size: clamp(2.7rem, 13vw, 4.7rem);
-    line-height: 0.93;
+    font-size: clamp(2.3rem, 11vw, 4rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
   }
 
   .about__description {

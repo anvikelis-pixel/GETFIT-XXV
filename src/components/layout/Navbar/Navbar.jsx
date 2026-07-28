@@ -4,6 +4,37 @@ import "./Navbar.css";
 const APP_URL =
   "https://apps.apple.com/gr/app/getfit-xxv/id6754255412?l=el";
 
+const navigationItems = [
+  {
+    label: "Σχετικά",
+    href: "#about",
+  },
+  {
+    label: "Υπηρεσίες",
+    href: "#services",
+  },
+  {
+    label: "Gallery",
+    href: "#gallery",
+  },
+  {
+    label: "Gym",
+    href: "#coaches",
+  },
+  {
+    label: "Ραντεβού",
+    href: "#app",
+  },
+  {
+    label: "Κριτικές",
+    href: "#reviews",
+  },
+  {
+    label: "Επικοινωνία",
+    href: "#contact",
+  },
+];
+
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,15 +55,35 @@ function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
 
   return (
     <header
-      className={`navbar ${
-        isScrolled ? "navbar--scrolled" : ""
-      }`}
+      className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}
     >
       <div className="navbar__container">
         <a
@@ -52,33 +103,18 @@ function Navbar() {
           }`}
           aria-label="Κύρια πλοήγηση"
         >
-          <a href="#about" onClick={closeMenu}>
-            Σχετικά
-          </a>
-
-          <a href="#services" onClick={closeMenu}>
-            Υπηρεσίες
-          </a>
-
-          <a href="#gallery" onClick={closeMenu}>
-            Gallery
-          </a>
-
-          <a href="#coaches" onClick={closeMenu}>
-            Gym
-          </a>
-
-          <a href="#app" onClick={closeMenu}>
-            Ραντεβού
-          </a>
-
-          <a href="#reviews" onClick={closeMenu}>
-            Κριτικές
-          </a>
-
-          <a href="#contact" onClick={closeMenu}>
-            Επικοινωνία
-          </a>
+          {navigationItems.map((item, index) => (
+            <a
+              href={item.href}
+              onClick={closeMenu}
+              key={item.href}
+              style={{
+                "--menu-index": index,
+              }}
+            >
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <div className="navbar__actions">
@@ -97,15 +133,13 @@ function Navbar() {
               isMenuOpen ? "navbar__toggle--open" : ""
             }`}
             aria-label={
-              isMenuOpen
-                ? "Κλείσιμο μενού"
-                : "Άνοιγμα μενού"
+              isMenuOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"
             }
             aria-expanded={isMenuOpen}
             aria-controls="navbar-menu"
-            onClick={() =>
-              setIsMenuOpen((current) => !current)
-            }
+            onClick={() => {
+              setIsMenuOpen((current) => !current);
+            }}
           >
             <span />
             <span />

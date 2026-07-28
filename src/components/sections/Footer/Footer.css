@@ -77,13 +77,18 @@
   display: grid;
   grid-template-columns:
     minmax(0, 1.25fr)
-    minmax(170px, 0.55fr)
+    minmax(160px, 0.52fr)
     minmax(270px, 0.8fr);
-  gap: clamp(48px, 7vw, 105px);
+  gap: clamp(44px, 6vw, 96px);
+}
+
+.footer__brand-column,
+.footer__links-column,
+.footer__contact-column {
+  min-width: 0;
 }
 
 .footer__brand-column {
-  min-width: 0;
   max-width: 560px;
 }
 
@@ -96,6 +101,7 @@
   line-height: 0.88;
   font-weight: 950;
   letter-spacing: -0.055em;
+  white-space: nowrap;
 }
 
 .footer__logo span {
@@ -123,16 +129,18 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 
+  width: 100%;
   max-width: 500px;
   margin-top: 32px;
 }
 
 .footer__store-link {
+  min-width: 0;
   min-height: 72px;
   padding: 13px 15px;
 
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 12px;
 
@@ -173,6 +181,8 @@
 }
 
 .footer__store-link > svg:first-child {
+  flex: 0 0 auto;
+
   color: var(--color-red-light);
 
   filter: drop-shadow(0 0 8px var(--color-red-32));
@@ -196,6 +206,9 @@
 .footer__store-link strong {
   display: block;
   margin-top: 4px;
+
+  overflow-wrap: normal;
+  word-break: normal;
 
   color: var(--color-white);
 
@@ -273,11 +286,12 @@
 }
 
 .footer__contact-list a {
+  min-width: 0;
   min-height: 76px;
   padding: 14px 15px;
 
   display: grid;
-  grid-template-columns: 36px 1fr;
+  grid-template-columns: 36px minmax(0, 1fr);
   align-items: center;
   gap: 12px;
 
@@ -325,6 +339,8 @@
   display: block;
   margin-top: 5px;
 
+  overflow-wrap: anywhere;
+
   color: rgba(255, 255, 255, 0.9);
 
   font-size: 0.9rem;
@@ -333,6 +349,7 @@
 
 .footer__socials {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
 
   margin-top: 25px;
@@ -394,15 +411,18 @@
 
 .footer__bottom {
   display: grid;
-  grid-template-columns: 1fr auto auto;
+  grid-template-columns: minmax(0, 1fr) auto auto;
   align-items: center;
   gap: 28px;
 }
 
 .footer__bottom p {
+  min-width: 0;
+
   color: rgba(255, 255, 255, 0.42);
 
   font-size: 0.72rem;
+  line-height: 1.55;
 }
 
 .footer__credit {
@@ -445,7 +465,11 @@
   box-shadow: var(--glow-red-soft);
 }
 
-@media (max-width: 1050px) {
+@media (max-width: 1120px) {
+  .footer {
+    padding-inline: 5vw;
+  }
+
   .footer__top {
     grid-template-columns: 1fr 1fr;
   }
@@ -460,18 +484,54 @@
   }
 }
 
-@media (max-width: 650px) {
+@media (max-width: 760px) {
   .footer {
-    padding: 78px 20px 24px;
+    padding: 82px 24px 26px;
   }
 
   .footer__top {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 46px;
   }
 
   .footer__brand-column {
     grid-column: auto;
+  }
+
+  .footer__links-column,
+  .footer__contact-column {
+    width: 100%;
+  }
+
+  .footer__divider {
+    margin-top: 58px;
+  }
+
+  .footer__bottom {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+
+  .footer__credit {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer {
+    padding: 76px 20px 24px;
+  }
+
+  .footer::before {
+    left: -10px;
+    bottom: -18px;
+
+    font-size: clamp(6rem, 28vw, 10rem);
+  }
+
+  .footer__logo {
+    font-size: clamp(2.5rem, 13vw, 4.2rem);
   }
 
   .footer__store-links {
@@ -482,32 +542,48 @@
     width: 100%;
   }
 
-  .footer__divider {
-    margin-top: 56px;
-  }
-
-  .footer__bottom {
-    grid-template-columns: 1fr auto;
-  }
-
-  .footer__credit {
-    grid-column: 1 / -1;
-
-    text-align: left;
+  .footer__contact-list strong {
+    font-size: 0.86rem;
   }
 }
 
 @media (max-width: 420px) {
+  .footer {
+    padding-inline: 16px;
+  }
+
   .footer__logo {
-    font-size: clamp(2.55rem, 13vw, 4rem);
+    font-size: clamp(2.25rem, 12vw, 3.6rem);
   }
 
   .footer__bottom {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .footer__credit {
+    grid-column: auto;
   }
 
   .footer__back-to-top {
     justify-self: start;
+  }
+}
+
+@media (hover: none) {
+  .footer__store-link:hover,
+  .footer__contact-list a:hover,
+  .footer__socials a:hover,
+  .footer__back-to-top:hover {
+    transform: none;
+  }
+
+  .footer__nav a:hover {
+    padding-left: 0;
+  }
+
+  .footer__nav a:hover::before {
+    width: 0;
   }
 }
 

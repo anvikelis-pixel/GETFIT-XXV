@@ -1,6 +1,9 @@
 import { ArrowUpRight, Dumbbell, HeartPulse, Users } from "lucide-react";
 import "./Coaches.css";
 
+const APP_URL =
+  "https://apps.apple.com/gr/app/getfit-xxv/id6754255412?l=el";
+
 const coachingAreas = [
   {
     id: "01",
@@ -31,10 +34,10 @@ function Coaches() {
       <div className="coaches__container">
         <header className="coaches__header">
           <div>
-            <p className="coaches__eyebrow">Η ΠΡΟΠΟΝΗΤΙΚΗ ΟΜΑΔΑ</p>
+            <p className="coaches__eyebrow">GETFIT XXV GYM</p>
 
             <h2 className="coaches__title">
-              ΚΑΘΟΔΗΓΗΣΗ ΠΟΥ
+              ΠΡΟΠΟΝΗΣΗ ΠΟΥ
               <span> ΚΑΝΕΙ ΤΗ ΔΙΑΦΟΡΑ.</span>
             </h2>
           </div>
@@ -68,7 +71,6 @@ function Coaches() {
 
                 <div className="coach-card__content">
                   <h3>{area.title}</h3>
-
                   <p>{area.description}</p>
 
                   <a href="#contact" className="coach-card__link">
@@ -87,11 +89,7 @@ function Coaches() {
             στόχους;
           </p>
 
-          <a
-            href="https://apps.apple.com/gr/app/getfit-xxv/id6754255412?l=el"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href={APP_URL} target="_blank" rel="noreferrer">
             Κλείσε την προπόνησή σου
             <ArrowUpRight size={19} strokeWidth={2} />
           </a>

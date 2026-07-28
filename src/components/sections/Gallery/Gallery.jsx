@@ -11,8 +11,8 @@ const galleryItems = [
   {
     id: 1,
     image: gallery01,
-    title: "Inside GETFIT XXV",
-    category: "COMMUNITY",
+    title: "Nothing Is Impossible.",
+    category: "GETFIT XXV",
     size: "large",
   },
   {
@@ -32,8 +32,8 @@ const galleryItems = [
   {
     id: 4,
     image: gallery04,
-    title: "Performance",
-    category: "SPORT PERFORMANCE",
+    title: "Train Hard.",
+    category: "GETFIT XXV",
     size: "normal",
   },
   {
@@ -46,8 +46,8 @@ const galleryItems = [
   {
     id: 6,
     image: gallery06,
-    title: "Inside GETFIT XXV",
-    category: "THE SPACE",
+    title: "Train Together.",
+    category: "COMMUNITY",
     size: "normal",
   },
 ];

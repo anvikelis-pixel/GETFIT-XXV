@@ -65,7 +65,9 @@ function Hero() {
         </motion.p>
 
         <motion.h1 className="hero__title" variants={itemVariants}>
-          <span className="hero__title-line">TRAIN WITH PURPOSE.</span>
+          <span className="hero__title-line">
+            TRAIN WITH PURPOSE.
+          </span>
 
           <span className="hero__title-line hero__title-line--muted">
             PERFORM WITHOUT LIMITS.
@@ -92,6 +94,7 @@ function Hero() {
           <a
             href={PHONE_URL}
             className="hero__button hero__button--secondary"
+            aria-label="Κάλεσε το GETFIT XXV στο 2815 202141"
           >
             <span>Κάλεσέ μας</span>
             <span aria-hidden="true">→</span>

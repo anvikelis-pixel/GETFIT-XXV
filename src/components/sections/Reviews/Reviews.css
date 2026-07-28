@@ -78,9 +78,14 @@
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
   align-items: end;
-  gap: 60px;
+  gap: clamp(40px, 5vw, 65px);
 
   margin-bottom: 70px;
+}
+
+.reviews__header > div,
+.reviews__intro {
+  min-width: 0;
 }
 
 .reviews__eyebrow {
@@ -97,13 +102,18 @@
 }
 
 .reviews__title {
-  max-width: 900px;
+  width:100%;
+  max-width:900px;
 
-  font-size: clamp(3rem, 6.8vw, 7.2rem);
-  line-height: 0.88;
-  letter-spacing: -0.06em;
-  font-weight: 950;
-  text-transform: uppercase;
+  font-size:clamp(3rem,6.5vw,7rem);
+  line-height:.9;
+  letter-spacing:-0.055em;
+  font-weight:950;
+  text-transform:uppercase;
+
+  overflow-wrap:normal;
+  word-break:normal;
+  hyphens:none;
 }
 
 .reviews__title span {
@@ -130,6 +140,7 @@
 .reviews__featured {
   position: relative;
 
+  min-width:0;
   min-height: 620px;
   padding: clamp(30px, 4vw, 54px);
 
@@ -680,28 +691,27 @@
   }
 }
 
-@media (max-width: 820px) {
+@media (max-width: 900px) {
   .reviews {
-    padding: 100px 20px;
+    padding: 110px 28px;
   }
 
   .reviews__header {
     grid-template-columns: 1fr;
     gap: 28px;
-
-    margin-bottom: 48px;
+    margin-bottom: 52px;
   }
 
   .reviews__title {
-    font-size: clamp(2.8rem, 14vw, 5rem);
+    font-size: clamp(2.9rem,9vw,5.8rem);
   }
 
   .reviews__cards {
-    grid-template-columns: 1fr;
+    grid-template-columns:1fr;
   }
 
   .review-card {
-    min-height: auto;
+    min-height:auto;
   }
 }
 
@@ -730,6 +740,92 @@
     transform: translateY(-5px);
   }
 }
+
+
+@media (max-width:680px){
+
+.reviews{
+padding:96px 20px;
+}
+
+.reviews::before{
+right:-15px;
+bottom:-30px;
+font-size:clamp(7rem,32vw,12rem);
+}
+
+.reviews__eyebrow{
+margin-bottom:16px;
+font-size:.68rem;
+letter-spacing:.2em;
+}
+
+.reviews__title{
+font-size:clamp(2.45rem,12vw,4.4rem);
+line-height:.94;
+}
+
+.reviews__intro{
+font-size:.94rem;
+line-height:1.7;
+}
+
+.reviews__featured{
+min-height:auto;
+padding:24px 22px;
+}
+
+.reviews__rating{
+padding-top:40px;
+}
+
+.reviews__featured blockquote{
+margin-top:30px;
+font-size:clamp(1.3rem,7vw,2rem);
+}
+
+.reviews__featured-footer,
+.reviews__bottom{
+flex-direction:column;
+align-items:flex-start;
+gap:18px;
+}
+
+.reviews__bottom a{
+width:100%;
+justify-content:space-between;
+}
+
+.review-card{
+padding:24px 22px;
+}
+
+.review-card h3{
+font-size:1.15rem;
+}
+
+.review-card p{
+font-size:.9rem;
+}
+
+}
+
+@media (hover:none){
+
+.reviews__featured:hover,
+.review-card:hover{
+transform:none;
+}
+
+.reviews__featured:hover::after,
+.review-card:hover::before,
+.review-card:hover::after{
+opacity:0;
+transform:none;
+}
+
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .reviews::after,
