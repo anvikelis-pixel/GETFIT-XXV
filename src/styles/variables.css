@@ -1,0 +1,124 @@
+:root {
+  /* =========================
+     CORE COLORS
+  ========================== */
+
+  --color-black: #050505;
+  --color-black-soft: #0b0b0b;
+  --color-black-elevated: #111111;
+  --color-black-card: #151515;
+
+  --color-white: #ffffff;
+  --color-white-muted: rgba(255, 255, 255, 0.74);
+  --color-white-soft: rgba(255, 255, 255, 0.46);
+  --color-white-faint: rgba(255, 255, 255, 0.16);
+
+  /* =========================
+     BRAND RED
+  ========================== */
+
+  --color-red: #d71920;
+  --color-red-dark: #9f0d13;
+  --color-red-deep: #6f080c;
+  --color-red-light: #ff3b42;
+  --color-red-bright: #ff575d;
+
+  /* =========================
+     RED TRANSPARENCIES
+  ========================== */
+
+  --color-red-05: rgba(215, 25, 32, 0.05);
+  --color-red-08: rgba(215, 25, 32, 0.08);
+  --color-red-12: rgba(215, 25, 32, 0.12);
+  --color-red-16: rgba(215, 25, 32, 0.16);
+  --color-red-22: rgba(215, 25, 32, 0.22);
+  --color-red-32: rgba(215, 25, 32, 0.32);
+  --color-red-45: rgba(215, 25, 32, 0.45);
+
+  /* =========================
+     GRADIENTS
+  ========================== */
+
+  --gradient-red:
+    linear-gradient(
+      135deg,
+      var(--color-red-light) 0%,
+      var(--color-red) 48%,
+      var(--color-red-dark) 100%
+    );
+
+  --gradient-red-deep:
+    linear-gradient(
+      145deg,
+      rgba(255, 59, 66, 0.96) 0%,
+      rgba(215, 25, 32, 0.96) 45%,
+      rgba(111, 8, 12, 0.98) 100%
+    );
+
+  --gradient-red-soft:
+    linear-gradient(
+      135deg,
+      rgba(215, 25, 32, 0.2) 0%,
+      rgba(215, 25, 32, 0.06) 55%,
+      transparent 100%
+    );
+
+  --gradient-dark:
+    linear-gradient(
+      180deg,
+      rgba(17, 17, 17, 0.98) 0%,
+      rgba(5, 5, 5, 1) 100%
+    );
+
+  /* =========================
+     GLOWS & SHADOWS
+  ========================== */
+
+  --glow-red-soft:
+    0 0 40px rgba(215, 25, 32, 0.16);
+
+  --glow-red-medium:
+    0 0 65px rgba(215, 25, 32, 0.24);
+
+  --glow-red-strong:
+    0 0 90px rgba(215, 25, 32, 0.34);
+
+  --shadow-small:
+    0 12px 32px rgba(0, 0, 0, 0.24);
+
+  --shadow-medium:
+    0 24px 60px rgba(0, 0, 0, 0.34);
+
+  --shadow-large:
+    0 38px 100px rgba(0, 0, 0, 0.46);
+
+  --shadow-red:
+    0 18px 50px rgba(215, 25, 32, 0.28);
+
+  /* =========================
+     BORDERS & OVERLAYS
+  ========================== */
+
+  --border-light: rgba(255, 255, 255, 0.1);
+  --border-medium: rgba(255, 255, 255, 0.16);
+  --border-red: rgba(215, 25, 32, 0.38);
+
+  --overlay-dark: rgba(0, 0, 0, 0.72);
+  --overlay-dark-strong: rgba(0, 0, 0, 0.88);
+
+  /* =========================
+     LAYOUT
+  ========================== */
+
+  --container-width: 1400px;
+  --navbar-height: 85px;
+
+  /* =========================
+     RADIUS
+  ========================== */
+
+  --radius-small: 12px;
+  --radius-medium: 20px;
+  --radius-large: 32px;
+  --radius-pill: 999px;
+}
