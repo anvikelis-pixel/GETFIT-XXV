@@ -11,7 +11,7 @@ const galleryItems = [
   {
     id: 1,
     image: gallery01,
-    title: "Group Training",
+    title: "Inside GETFIT XXV",
     category: "COMMUNITY",
     size: "large",
   },
