@@ -15,7 +15,9 @@ function Navbar() {
 
     handleScroll();
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+    });
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -28,7 +30,9 @@ function Navbar() {
 
   return (
     <header
-      className={`navbar ${isScrolled ? "navbar--scrolled" : ""}`}
+      className={`navbar ${
+        isScrolled ? "navbar--scrolled" : ""
+      }`}
     >
       <div className="navbar__container">
         <a
@@ -42,6 +46,7 @@ function Navbar() {
         </a>
 
         <nav
+          id="navbar-menu"
           className={`navbar__menu ${
             isMenuOpen ? "navbar__menu--open" : ""
           }`}
@@ -59,8 +64,12 @@ function Navbar() {
             Gallery
           </a>
 
+          <a href="#coaches" onClick={closeMenu}>
+            Gym
+          </a>
+
           <a href="#app" onClick={closeMenu}>
-            Πρόγραμμα
+            Ραντεβού
           </a>
 
           <a href="#reviews" onClick={closeMenu}>
@@ -88,11 +97,15 @@ function Navbar() {
               isMenuOpen ? "navbar__toggle--open" : ""
             }`}
             aria-label={
-              isMenuOpen ? "Κλείσιμο μενού" : "Άνοιγμα μενού"
+              isMenuOpen
+                ? "Κλείσιμο μενού"
+                : "Άνοιγμα μενού"
             }
             aria-expanded={isMenuOpen}
             aria-controls="navbar-menu"
-            onClick={() => setIsMenuOpen((current) => !current)}
+            onClick={() =>
+              setIsMenuOpen((current) => !current)
+            }
           >
             <span />
             <span />
