@@ -107,7 +107,9 @@ function Reviews() {
           viewport={{ once: true, amount: 0.25 }}
         >
           <motion.div variants={itemVariants}>
-            <p className="reviews__eyebrow">ΠΡΑΓΜΑΤΙΚΕΣ ΚΡΙΤΙΚΕΣ GOOGLE</p>
+            <p className="reviews__eyebrow">
+              ΠΡΑΓΜΑΤΙΚΕΣ ΚΡΙΤΙΚΕΣ GOOGLE
+            </p>
 
             <h2 className="reviews__title">
               Η ΕΜΠΙΣΤΟΣΥΝΗ
@@ -115,7 +117,10 @@ function Reviews() {
             </h2>
           </motion.div>
 
-          <motion.p className="reviews__intro" variants={itemVariants}>
+          <motion.p
+            className="reviews__intro"
+            variants={itemVariants}
+          >
             Αυθεντικές αξιολογήσεις μελών που μοιράζονται την εμπειρία τους
             από το GETFIT XXV.
           </motion.p>
@@ -166,7 +171,11 @@ function Reviews() {
                 <strong>★★★★★</strong>
               </div>
 
-              <a href={GOOGLE_URL} target="_blank" rel="noreferrer">
+              <a
+                href={GOOGLE_URL}
+                target="_blank"
+                rel="noreferrer"
+              >
                 Δες στο Google
                 <ArrowUpRight size={18} strokeWidth={2} />
               </a>
@@ -187,7 +196,9 @@ function Reviews() {
                 variants={itemVariants}
               >
                 <div className="review-card__top">
-                  <span className="review-card__number">{review.id}</span>
+                  <span className="review-card__number">
+                    {review.id}
+                  </span>
 
                   <Quote size={23} strokeWidth={1.7} />
                 </div>
@@ -200,29 +211,6 @@ function Reviews() {
             ))}
           </motion.div>
         </div>
-
-        <motion.div
-          className="reviews__bottom"
-          initial={{ opacity: 0, y: 26 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{
-            duration: 0.7,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        >
-          <div>
-            <span className="reviews__bottom-label">ΚΡΙΤΙΚΕΣ GOOGLE</span>
-            <p>
-              Μέση βαθμολογία 4.9 από 89 πραγματικές αξιολογήσεις.
-            </p>
-          </div>
-
-          <a href={GOOGLE_URL} target="_blank" rel="noreferrer">
-            Δες όλες τις αξιολογήσεις
-            <ArrowUpRight size={19} strokeWidth={2} />
-          </a>
-        </motion.div>
       </div>
     </section>
   );

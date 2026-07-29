@@ -7,6 +7,9 @@ import gallery04 from "../../../assets/images/gallery/gallery-04.jpg";
 import gallery05 from "../../../assets/images/gallery/gallery-05.jpg";
 import gallery06 from "../../../assets/images/gallery/gallery-06.jpg";
 
+const INSTAGRAM_URL = "https://www.instagram.com/getfit_xxv/";
+const FACEBOOK_URL = "https://www.facebook.com/Getfitxxv/";
+
 const galleryItems = [
   {
     id: 1,
@@ -102,14 +105,27 @@ function Gallery() {
         <div className="gallery__footer">
           <p>Ακολούθησε την καθημερινότητα του GETFIT XXV.</p>
 
-          <a
-            href="https://www.instagram.com/getfit_xxv/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Instagram
-            <span aria-hidden="true">↗</span>
-          </a>
+          <div className="gallery__socials">
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ακολούθησε το GETFIT XXV στο Instagram"
+            >
+              Instagram
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a
+              href={FACEBOOK_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ακολούθησε το GETFIT XXV στο Facebook"
+            >
+              Facebook
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

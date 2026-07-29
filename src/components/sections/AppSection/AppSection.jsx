@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
 import {
+  ArrowUpRight,
   CalendarDays,
   CheckCircle2,
   Smartphone,
 } from "lucide-react";
-
-import appStoreBadge from "../../../assets/images/app/app-store-badge.png";
-import googlePlayBadge from "../../../assets/images/app/google-play-badge.png";
 
 import "./AppSection.css";
 
@@ -22,6 +20,58 @@ const benefits = [
   "Διαχειρίσου τα ραντεβού σου",
   "Πρόσβαση από το κινητό σου",
 ];
+
+function AppleIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      role="img"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M16.7 12.9c0-2.5 2-3.7 2.1-3.8a4.5 4.5 0 0 0-3.5-1.9c-1.5-.1-2.9.9-3.7.9-.8 0-2-1-3.3-.9a4.9 4.9 0 0 0-4.1 2.5c-1.8 3-.5 7.5 1.2 10 .9 1.2 1.9 2.6 3.3 2.5 1.3-.1 1.8-.8 3.4-.8 1.6 0 2 .8 3.4.8 1.4 0 2.3-1.3 3.1-2.5 1-1.4 1.4-2.8 1.4-2.9-.1 0-3.3-1.3-3.3-3.9ZM14.3 5.6c.7-.9 1.2-2.1 1.1-3.3-1.1 0-2.4.7-3.2 1.6-.7.8-1.3 2-1.1 3.2 1.2.1 2.4-.6 3.2-1.5Z" />
+    </svg>
+  );
+}
+
+function GooglePlayIcon() {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      role="img"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M3.6 2.7a1.7 1.7 0 0 0-.4 1.2v16.2c0 .5.1.9.4 1.2l9.3-9.3-9.3-9.3Zm10.5 10.5-2.4-2.4 3-3 3.4 1.9c1 .6 1 1.4 0 2l-4 1.5Zm-2.4 0 2.4 2.4-6.7 3.8 4.3-4.3v-1.9Zm0-2.4L7.4 6.5l6.7 3.8-2.4 2.4Z" />
+    </svg>
+  );
+}
+
+function StoreButton({ href, label, title, icon }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="app-section__store-link"
+      aria-label={`${label} ${title}`}
+    >
+      <span className="app-section__store-icon">{icon}</span>
+
+      <span className="app-section__store-copy">
+        <small>{label}</small>
+        <strong>{title}</strong>
+      </span>
+
+      <ArrowUpRight
+        className="app-section__store-arrow"
+        size={19}
+        strokeWidth={2}
+        aria-hidden="true"
+      />
+    </a>
+  );
+}
 
 function AppSection() {
   return (
@@ -63,33 +113,19 @@ function AppSection() {
             className="app-section__store-badges"
             aria-label="Λήψη εφαρμογής GETFIT XXV"
           >
-            <a
+            <StoreButton
               href={APP_STORE_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="app-section__store-link"
-              aria-label="Κατέβασε το GETFIT XXV από το App Store"
-            >
-              <img
-                src={appStoreBadge}
-                alt="Download on the App Store"
-                className="app-section__store-image"
-              />
-            </a>
+              label="Κατέβασέ το από το"
+              title="App Store"
+              icon={<AppleIcon />}
+            />
 
-            <a
+            <StoreButton
               href={GOOGLE_PLAY_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="app-section__store-link"
-              aria-label="Κατέβασε το GETFIT XXV από το Google Play"
-            >
-              <img
-                src={googlePlayBadge}
-                alt="Get it on Google Play"
-                className="app-section__store-image"
-              />
-            </a>
+              label="Απόκτησέ το στο"
+              title="Google Play"
+              icon={<GooglePlayIcon />}
+            />
           </div>
         </motion.div>
 

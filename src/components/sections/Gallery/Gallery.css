@@ -361,6 +361,14 @@
   line-height: 1.6;
 }
 
+
+.gallery__socials {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+}
+
 .gallery__footer a {
   position: relative;
 
@@ -577,6 +585,11 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 18px;
+  }
+
+
+  .gallery__socials {
+    align-items: flex-start;
   }
 }
 
