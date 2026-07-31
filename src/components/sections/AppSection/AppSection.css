@@ -1,5 +1,6 @@
 .app-section {
   position: relative;
+  scroll-margin-top: 90px;
   overflow: hidden;
 
   padding: 150px 7vw;
@@ -183,50 +184,6 @@
   color: var(--color-red-light);
 
   filter: drop-shadow(0 0 8px var(--color-red-32));
-}
-
-.app-section__button {
-  width: fit-content;
-  min-height: 57px;
-  margin-top: 42px;
-  padding: 0 23px;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 18px;
-
-  border-radius: var(--radius-pill);
-
-  background: var(--gradient-red);
-  color: var(--color-white);
-
-  font-size: 0.85rem;
-  font-weight: 850;
-
-  box-shadow:
-    var(--shadow-red),
-    inset 0 1px 0 rgba(255, 255, 255, 0.18);
-
-  transition:
-    transform 200ms ease,
-    background 200ms ease,
-    box-shadow 200ms ease;
-}
-
-.app-section__button:hover {
-  transform: translateY(-4px);
-
-  background:
-    linear-gradient(
-      135deg,
-      var(--color-red-bright),
-      var(--color-red-light),
-      var(--color-red)
-    );
-
-  box-shadow:
-    var(--glow-red-medium),
-    0 22px 58px rgba(215, 25, 32, 0.4);
 }
 
 .app-section__visual {
@@ -666,13 +623,7 @@
   .app-section__benefit:hover {
     transform: none;
   }
-
-  .app-section__button {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .app-section__visual {
+.app-section__visual {
     min-height: 650px;
   }
 
@@ -713,7 +664,6 @@
 @media (prefers-reduced-motion: reduce) {
   .app-section::after,
   .app-section__benefit,
-  .app-section__button,
   .app-section__visual::before,
   .app-phone,
   .app-phone__schedule > div,
@@ -894,12 +844,6 @@
 
 .app-section__store-link:hover .app-section__store-arrow {
   transform: translate(3px, -3px);
-}
-
-.app-section__title {
-  overflow-wrap: normal;
-  word-break: normal;
-  hyphens: none;
 }
 
 @media (max-width: 1180px) {

@@ -43,6 +43,14 @@ const services = [
     description:
       "Ελεύθερη προπόνηση στον χώρο του GETFIT XXV, με κράτηση μέσω της επίσημης εφαρμογής.",
   },
+  {
+    number: "08",
+    title: "Friday Group Workout",
+    description:
+      "Ομαδική προπόνηση κάθε Παρασκευή με τον Στέφανο, με ενέργεια, καθοδήγηση και δυναμικό ομαδικό κλίμα.",
+    isNew: true,
+    hasBooking: true,
+  },
 ];
 
 function Services() {
@@ -67,19 +75,35 @@ function Services() {
 
         <div className="services__grid">
           {services.map((service) => (
-            <article className="service-card" key={service.number}>
+            <article
+              className={`service-card ${
+                service.isNew ? "service-card--featured" : ""
+              }`}
+              key={service.number}
+            >
               <div className="service-card__top">
                 <span className="service-card__number">
                   {service.number}
                 </span>
 
                 <span className="service-card__line" />
+
+                {service.isNew && (
+                  <span className="service-card__badge">ΝΕΟ</span>
+                )}
               </div>
 
               <div className="service-card__content">
                 <h3>{service.title}</h3>
 
                 <p>{service.description}</p>
+
+                {service.hasBooking && (
+                  <a className="service-card__button" href="#app">
+                    Κλείσε θέση
+                    <span aria-hidden="true">↘</span>
+                  </a>
+                )}
               </div>
             </article>
           ))}
